@@ -1,13 +1,270 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0%;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.orange {
+  color: hsl(51, 100%, 50%);
+}
+
+.grey {
+  color: grey;
+}
+
+.green {
+  color: rgb(56, 142, 60);
+}
+
+.large {
+  font-size: large;
+}
+
+.medium {
+  font-size: medium;
+}
+
+.small {
+  font-size: small;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.light {
+  font-weight: lighter;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.btn {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+header,
+footer {
+  color: white;
+  padding: 1%;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+header {
+  grid-area: header;
+  background-color: rgb(40, 116, 240);
+  top: 0%;
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  z-index: 1;
+}
+
+header h4 {
+  cursor: pointer;
+}
+
+footer {
+  grid-area: footer;
+  background-color: rgb(23, 35, 55);
+  display: flex;
+}
+
+.title {
+  font-style: italic;
+}
+
+.search {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-search {
+  width: 100%;
+  height: 1.9rem;
+  padding: 0.3rem;
+  text-indent: 10px;
+  border: none;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.btn-search {
+  height: 2.5rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0px 3px 3px 0px;
+  background-color: white;
+  color: rgb(40, 116, 240);
+}
+
+.btn-login {
+  width: 5rem;
+  height: 1.9rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: white;
+  color: rgb(40, 116, 240);
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 4.5fr;
+  grid-template-rows: 1fr;
+  column-gap: 1%;
+  justify-items: center;
+  align-items: center;
+  padding: 1%;
+  background-color: rgb(240, 242, 245);
+  grid-template-areas: "filter products";
+}
+
+.products {
+  width: 100%;
+  height: 100%;
+  grid-area: products;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.filter {
+  grid-area: filter;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter section {
+  padding: 5%;
+  border-bottom: 3px solid rgb(240, 242, 245);
+}
+
+.filter section > * {
+  padding: 2%;
+  margin-bottom: 3%;
+  font-size: small;
+}
+
+h4,
+h5 {
+  margin: 0%;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.filter label {
+  color: grey;
+  text-transform: capitalize;
+}
+
+.filter-text {
+  grid-column: span 4;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-indent: 2%;
+  border-bottom: 3px solid rgb(240, 242, 245);
+}
+
+.product {
+  width: 90%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.shorten {
+  width: 220px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product p,
+h6 {
+  margin-bottom: 0%;
+}
+
+.product-rating {
+  background-color: rgb(56, 142, 60);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 3px;
+  margin: 0.2rem;
+}
+
+.product img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.product-price > * {
+  padding: 0.2rem;
+}
+
+.product:hover {
+  box-shadow: 3px 3px 10px 9px rgb(240, 242, 245);
+}
+
+input {
+  outline: none;
+}
+
+.applied-filters {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.applied-filters li {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  opacity: 0.8;
+  text-align: center;
+  background-color: rgb(215, 215, 215);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applied-filters li:hover {
+  background-color: rgb(200, 200, 200);
+  text-decoration: line-through;
+}
+
+.clear {
+  float: right;
+  color: rgb(40, 116, 240);
+  font-size: smaller;
+  cursor: pointer;
 }
